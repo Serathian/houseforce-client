@@ -1,2 +1,3 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>This will be main the landing page</h1>
+<a href="/renovation"><h1>Navigate to Renovation Site</h1></a>
+<a href="/homecare"><h1>Navigate to Homecare Site</h1></a>
