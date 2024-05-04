@@ -4,6 +4,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Input } from '$lib/components/ui/input';
 	import * as Popover from '$lib/components/ui/popover';
+	import { fade, fly } from 'svelte/transition';
 
 	// Blocks
 	import Brand from '$lib/components/blocks/brand.svelte';
@@ -15,10 +16,20 @@
 	import Search from 'lucide-svelte/icons/search';
 	import Arrow from 'lucide-svelte/icons/arrow-big-right-dash';
 	import Menu from 'lucide-svelte/icons/menu';
+
+	let y: number;
 </script>
 
-<header class="fixed top-0 h-16 w-full bg-muted backdrop-filter md:hidden">
-	<div class="container flex h-full w-full items-center md:justify-between">
+<svelte:window bind:scrollY={y} />
+
+<header
+	class="fixed top-0 h-16 w-full bg-muted backdrop-filter transition-all md:hidden"
+	class:bg-muted={y < 60}
+>
+	<div
+		class="container flex h-full w-full items-center justify-between transition-all"
+		transition:fade
+	>
 		<!-- Mobile side nav-->
 		<Sheet.Root>
 			<Sheet.Trigger asChild let:builder>
@@ -70,10 +81,13 @@
 		</Sheet.Root>
 
 		<!-- Brand -->
-		<Brand />
-
+		{#if y < 60}
+			<div transition:fly>
+				<Brand />
+			</div>
+		{/if}
 		<!-- search -->
-		<div id="search">
+		<div id="search" class="">
 			<Popover.Root>
 				<Popover.Trigger asChild let:builder>
 					<Button builders={[builder]} variant="outline" size="icon" class="text-primary">
