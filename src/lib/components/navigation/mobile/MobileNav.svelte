@@ -22,7 +22,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header
+<nav
 	class="fixed top-0 h-16 w-full bg-muted backdrop-filter transition-all md:hidden"
 	class:bg-muted={y < 60}
 >
@@ -71,7 +71,7 @@
 						Blogs
 					</Button>
 
-					<Button variant="outline" class="border-tertiary text-tertiary gap-3" href="/homecare">
+					<Button variant="outline" class="gap-3 border-tertiary text-tertiary" href="/homecare">
 						<span class="sr-only">Homecare</span>
 						To -other domain-
 						<Arrow />
@@ -107,4 +107,4 @@
 			</Popover.Root>
 		</div>
 	</div>
-</header>
+</nav>

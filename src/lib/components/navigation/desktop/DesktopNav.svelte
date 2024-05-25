@@ -16,13 +16,13 @@
 
 <svelte:window bind:scrollY={y} />
 
-<div class="fixed top-0 hidden w-full bg-muted md:block">
+<nav class="fixed top-0 hidden w-full bg-muted md:block">
 	{#if y < 80}
 		<div class="container top-0 flex h-16 w-full items-center justify-between">
 			<!-- Brand -->
 			<Brand />
 
-			<Button variant="outline" class="border-tertiary text-tertiary gap-3" href="/homecare">
+			<Button variant="outline" class="gap-3 border-tertiary text-tertiary" href="/homecare">
 				<span class="sr-only">Homecare</span>
 				To -other domain-
 				<Arrow />
@@ -61,4 +61,4 @@
 			/>
 		</div>
 	</nav>
-</div>
+</nav>

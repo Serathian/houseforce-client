@@ -1,12 +1,7 @@
-<script>
-	import DesktopNav from '../navigation/desktop/DesktopNav.svelte';
-	import MobileNav from '../navigation/mobile/MobileNav.svelte';
+<script lang="ts">
+	export let heroText: string;
 </script>
 
-<MobileNav />
-<DesktopNav />
-<header class="h-80 bg-secondary md:pt-36">
-	<div class="banner container">
-		<div class="logo">Logo place</div>
-	</div>
+<header class="flex h-80 flex-col items-center justify-center bg-secondary md:pt-36">
+	<h1 class="translate-y-8">{heroText}</h1>
 </header>
