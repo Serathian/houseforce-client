@@ -1,11 +1,7 @@
 <script lang="ts">
-	import { theme } from '@/stores';
+	import { updateCurrentTheme, Theme } from '@/utils/domainHelper';
 
-	const update = () => {
-		theme.update((t) => (t = 'Some Hero Text (homecare)'));
-	};
-
-	update();
+	updateCurrentTheme(Theme.Homecare, 'from homecare');
 </script>
 
 <h1>Home Care landing page</h1>

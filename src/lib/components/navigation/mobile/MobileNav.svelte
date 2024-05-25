@@ -17,6 +17,13 @@
 	import Arrow from 'lucide-svelte/icons/arrow-big-right-dash';
 	import Menu from 'lucide-svelte/icons/menu';
 
+	// Other
+	import type { DomainConstants } from '@/utils/constants';
+
+	// Props
+	export let otherDomain: DomainConstants;
+
+	// Variables
 	let y: number;
 </script>
 
@@ -71,9 +78,13 @@
 						Blogs
 					</Button>
 
-					<Button variant="outline" class="gap-3 border-tertiary text-tertiary" href="/homecare">
+					<Button
+						variant="outline"
+						class="gap-3 border-tertiary text-tertiary"
+						href={otherDomain.homeUrl}
+					>
 						<span class="sr-only">Homecare</span>
-						To -other domain-
+						To {otherDomain.domainName}
 						<Arrow />
 					</Button>
 				</Sheet.Header>

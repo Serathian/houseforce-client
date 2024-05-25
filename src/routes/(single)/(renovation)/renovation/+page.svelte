@@ -1,11 +1,8 @@
 <script lang="ts">
-	import { theme } from '@/stores';
+	import { updateCurrentTheme, Theme } from '@/utils/domainHelper';
 
-	const update = () => {
-		theme.update((t) => (t = 'Some Hero Text (renovation)'));
-	};
-
-	update();
+	// Do some api call here
+	updateCurrentTheme(Theme.Renovation, 'from renovation');
 </script>
 
 <h1 class="full">This will be the Renovation home page</h1>

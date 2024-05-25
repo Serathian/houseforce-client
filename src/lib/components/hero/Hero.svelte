@@ -1,5 +1,10 @@
 <script lang="ts">
-	export let heroText: string;
+	import { currentTheme } from '@/stores';
+
+	let heroText: string;
+	currentTheme.subscribe((value) => {
+		heroText = value.heroText;
+	});
 </script>
 
 <header class="flex h-80 flex-col items-center justify-center bg-secondary md:pt-36">

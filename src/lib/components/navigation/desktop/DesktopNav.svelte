@@ -11,6 +11,13 @@
 	import Search from 'lucide-svelte/icons/search';
 	import Brand from '@/components/blocks/brand.svelte';
 
+	// Other
+	import type { DomainConstants } from '@/utils/constants';
+
+	// Props
+	export let otherDomain: DomainConstants;
+
+	// Variables
 	let y: number;
 </script>
 
@@ -22,11 +29,15 @@
 			<!-- Brand -->
 			<Brand />
 
-			<Button variant="outline" class="gap-3 border-tertiary text-tertiary" href="/homecare">
-				<span class="sr-only">Homecare</span>
-				To -other domain-
-				<Arrow />
-			</Button>
+			<!-- search -->
+			<div class="relative">
+				<Search class="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+				<Input
+					type="search"
+					placeholder="Search..."
+					class="w-full rounded-lg bg-background pl-8 focus-visible:ring-primary md:w-[200px] lg:w-[320px]"
+				/>
+			</div>
 		</div>
 	{/if}
 	<nav class="container sticky top-0 flex h-16 w-full items-center justify-between">
@@ -50,15 +61,14 @@
 				Blogs
 			</Button>
 		</div>
-
-		<!-- search -->
-		<div class="relative">
-			<Search class="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-			<Input
-				type="search"
-				placeholder="Search..."
-				class="w-full rounded-lg bg-background pl-8 focus-visible:ring-primary md:w-[200px] lg:w-[320px]"
-			/>
-		</div>
+		<Button
+			variant="outline"
+			class="gap-3 border-tertiary text-tertiary"
+			href={otherDomain.homeUrl}
+		>
+			<span class="sr-only">Homecare</span>
+			To {otherDomain.domainName}
+			<Arrow />
+		</Button>
 	</nav>
 </nav>
