@@ -1012,6 +1012,7 @@ export interface ApiHomecareHomecare extends Schema.SingleType {
     singularName: "homecare";
     pluralName: "homecares";
     displayName: "Homecare";
+    description: "";
   };
   options: {
     draftAndPublish: true;
@@ -1025,6 +1026,14 @@ export interface ApiHomecareHomecare extends Schema.SingleType {
     Title: Attribute.String &
       Attribute.Required &
       Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ContentArea: Attribute.DynamicZone<
+      ["blocks.image-block", "blocks.text-block"]
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

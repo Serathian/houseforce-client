@@ -19,3 +19,9 @@ export type CardDataAttributes = {
 	ImageUrl: string;
 	createdAt: Date;
 };
+
+// TODO: Convert this to mirror what strapi provides
+export type StrapiImage = {
+	alternativeText: string;
+	name: string;
+};
