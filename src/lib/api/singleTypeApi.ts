@@ -34,7 +34,7 @@ export const GetSingleType = async <Type extends APIResponse<Common.UID.ContentT
 ) => {
 	const query = qs.stringify({ populate: '*' });
 	async function getData() {
-		const res = await fetch(BASE_URL + path + '?' + query);
+		const res = await fetch(BASE_URL + path + '?' + 'populate[ContentArea][populate]=*');
 
 		if (!res.ok) {
 			// This will activate the closest `error.js` Error Boundary

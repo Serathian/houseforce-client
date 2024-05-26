@@ -6,6 +6,6 @@
 <Navigation />
 <Hero />
 
-<div class="container">
+<div class="container grid gap-3 pt-6">
 	<slot />
 </div>

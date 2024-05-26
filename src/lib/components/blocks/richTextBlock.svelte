@@ -76,7 +76,7 @@
 					{/if}
 
 					{#if child.type === RichTextBlockChildType.link && child.url}
-						<a href={child.url}>{renderText(child.children)}</a>
+						<a href={child.url}>{@html renderText(child.children)}</a>
 					{/if}
 
 					{#if child.type === RichTextBlockChildType.text}
@@ -88,27 +88,27 @@
 
 		<!-- Lists -->
 		{#if block && block.type === RichTextBlockType.list && block.format === RichTextBlockFormat.unordered}
-			<ul>{renderList(block)}</ul>
+			<ul>{@html renderList(block)}</ul>
 		{/if}
 
 		{#if block && block.type === RichTextBlockType.list && block.format === RichTextBlockFormat.ordered}
-			<ol>{renderList(block)}</ol>
+			<ol>{@html renderList(block)}</ol>
 		{/if}
 
 		<!-- Headings -->
 		{#if block && block.type === RichTextBlockType.heading}
 			{#if block.level === 1}
-				<h1>{renderText(block.children)}</h1>
+				<h1>{@html renderText(block.children)}</h1>
 			{:else if block.level === 2}
-				<h2>{renderText(block.children)}</h2>
+				<h2>{@html renderText(block.children)}</h2>
 			{:else if block.level === 3}
-				<h3>{renderText(block.children)}</h3>
+				<h3>{@html renderText(block.children)}</h3>
 			{:else if block.level === 4}
-				<h4>{renderText(block.children)}</h4>
+				<h4>{@html renderText(block.children)}</h4>
 			{:else if block.level === 5}
-				<h5>{renderText(block.children)}</h5>
+				<h5>{@html renderText(block.children)}</h5>
 			{:else if block.level === 6}
-				<h6>{renderText(block.children)}</h6>
+				<h6>{@html renderText(block.children)}</h6>
 			{/if}
 		{/if}
 		<!-- Image -->
