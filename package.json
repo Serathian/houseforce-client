@@ -16,6 +16,7 @@
 		"prettier": "npx prettier . --write"
 	},
 	"devDependencies": {
+		"@strapi/strapi": "4.24.0",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
