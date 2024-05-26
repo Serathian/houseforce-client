@@ -1,35 +1,36 @@
-import { currentTheme, type CurrentTheme } from '@/stores';
+import { currentTheme } from '@/stores';
 import constants, { type DomainConstants } from './constants';
-export enum Theme {
-	Renovation,
-	Homecare,
-	Blog,
-	Articles,
-	NotSet
-}
+import { Domain } from '@/types/types';
 
-export const updateCurrentTheme = (newtheme: Theme, heroText: string) => {
+export const updateCurrentTheme = (newtheme: Domain, heroText: string) => {
 	let currentDomain: DomainConstants;
 	let otherDomain: DomainConstants;
 
 	switch (newtheme) {
-		case Theme.Renovation:
+		case Domain.Renovation:
 			currentDomain = constants.renovation;
 			otherDomain = constants.homecare;
 			break;
 
-		case Theme.Homecare:
+		case Domain.Homecare:
 			currentDomain = constants.homecare;
 			otherDomain = constants.renovation;
 			break;
 
-		case Theme.Blog:
+		// Minor domains don't have a secondary.
+		case Domain.AboutUs:
+			currentDomain = constants.aboutus;
 			break;
 
-		case Theme.Articles:
+		case Domain.Blogs:
+			currentDomain = constants.blogs;
 			break;
 
-		case Theme.NotSet:
+		case Domain.Articles:
+			currentDomain = constants.articles;
+			break;
+
+		case Domain.NotSet:
 			break;
 
 		default:
