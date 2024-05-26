@@ -60,57 +60,73 @@
 							class="w-full rounded-lg bg-background pl-8 focus-visible:ring-primary md:w-[200px] lg:w-[320px]"
 						/>
 					</div>
-
-					<Button variant="outline" class="gap-3 border-primary text-primary" href="/projects">
-						<span class="sr-only">Projects</span>
-						<Hammer />
-						Projects
-					</Button>
-
-					<Button variant="outline" class="gap-3 border-primary text-primary" href="/articles">
-						<span class="sr-only">Articles</span>
-						<Newspaper />
-						Articles
-					</Button>
-
-					<Button variant="outline" class="gap-3 border-primary text-primary" href="/blogs">
-						<span class="sr-only">Blogs</span>
-						<Rss />
-						Blogs
-					</Button>
-
-					{#if otherDomain}
+					<Sheet.Close asChild let:builder>
 						<Button
+							builders={[builder]}
 							variant="outline"
-							class="gap-3 border-tertiary text-tertiary"
-							href={otherDomain.homeUrl}
+							class="gap-3 border-primary text-primary"
+							href="/projects"
 						>
-							<span class="sr-only">{otherDomain.domainName}</span>
-							To {otherDomain.domainName}
-							<Arrow />
+							<span class="sr-only">Projects</span>
+							<Hammer />
+							Projects
 						</Button>
-					{:else}
-						<div class="flex flex-col gap-2">
+
+						<Button
+							builders={[builder]}
+							variant="outline"
+							class="gap-3 border-primary text-primary"
+							href="/articles"
+						>
+							<span class="sr-only">Articles</span>
+							<Newspaper />
+							Articles
+						</Button>
+
+						<Button
+							builders={[builder]}
+							variant="outline"
+							class="gap-3 border-primary text-primary"
+							href="/blogs"
+						>
+							<span class="sr-only">Blogs</span>
+							<Rss />
+							Blogs
+						</Button>
+
+						{#if otherDomain}
 							<Button
 								variant="outline"
 								class="gap-3 border-tertiary text-tertiary"
-								href={constants.homecare.homeUrl}
+								href={otherDomain.homeUrl}
 							>
-								<span class="sr-only">{constants.homecare.domainName}</span>
-								To {constants.homecare.domainName}
+								<span class="sr-only">{otherDomain.domainName}</span>
+								To {otherDomain.domainName}
 								<Arrow />
 							</Button>
-							<Button
-								variant="outline"
-								class="gap-3 border-secondary text-secondary"
-								href={constants.renovation.homeUrl}
-							>
-								<span class="sr-only">{constants.homecare.domainName}</span>
-								To {constants.renovation.domainName}
-								<Arrow />
-							</Button>
-						</div>
-					{/if}
+						{:else}
+							<div class="flex flex-col gap-2">
+								<Button
+									variant="outline"
+									class="gap-3 border-tertiary text-tertiary"
+									href={constants.homecare.homeUrl}
+								>
+									<span class="sr-only">{constants.homecare.domainName}</span>
+									To {constants.homecare.domainName}
+									<Arrow />
+								</Button>
+								<Button
+									variant="outline"
+									class="gap-3 border-secondary text-secondary"
+									href={constants.renovation.homeUrl}
+								>
+									<span class="sr-only">{constants.homecare.domainName}</span>
+									To {constants.renovation.domainName}
+									<Arrow />
+								</Button>
+							</div>
+						{/if}
+					</Sheet.Close>
 				</Sheet.Header>
 			</Sheet.Content>
 		</Sheet.Root>
