@@ -1,38 +1,12 @@
-# create-svelte
+Some useful links for later
+https://kit.svelte.dev/ general info for Svelte
+https://learn.svelte.dev/ svelte tutorial
+https://lucide.dev/icons/ icons in use
+https://github.com/tailwindlabs/tailwindcss-typography used in the richTextBlock
+https://www.shadcn-svelte.com/ ui framework in use
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+https://docs.strapi.io/dev-docs/api/rest/populate-select populating dynamic content areas
 
-## Creating a project
+https://coolors.co/ecc8af-99d2e8-c56bcf-c18c5d-495867 colour pallet
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+https://strapi.io/blog/improve-your-frontend-experience-with-strapi-types-and-type-script type import
