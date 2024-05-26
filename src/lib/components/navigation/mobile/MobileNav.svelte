@@ -19,6 +19,7 @@
 
 	// Other
 	import type { DomainConstants } from '@/utils/constants';
+	import constants from '@/utils/constants';
 
 	// Props
 	export let otherDomain: DomainConstants;
@@ -78,15 +79,38 @@
 						Blogs
 					</Button>
 
-					<Button
-						variant="outline"
-						class="gap-3 border-tertiary text-tertiary"
-						href={otherDomain.homeUrl}
-					>
-						<span class="sr-only">Homecare</span>
-						To {otherDomain.domainName}
-						<Arrow />
-					</Button>
+					{#if otherDomain}
+						<Button
+							variant="outline"
+							class="gap-3 border-tertiary text-tertiary"
+							href={otherDomain.homeUrl}
+						>
+							<span class="sr-only">{otherDomain.domainName}</span>
+							To {otherDomain.domainName}
+							<Arrow />
+						</Button>
+					{:else}
+						<div class="flex flex-col gap-2">
+							<Button
+								variant="outline"
+								class="gap-3 border-tertiary text-tertiary"
+								href={constants.homecare.homeUrl}
+							>
+								<span class="sr-only">{constants.homecare.domainName}</span>
+								To {constants.homecare.domainName}
+								<Arrow />
+							</Button>
+							<Button
+								variant="outline"
+								class="gap-3 border-secondary text-secondary"
+								href={constants.renovation.homeUrl}
+							>
+								<span class="sr-only">{constants.homecare.domainName}</span>
+								To {constants.renovation.domainName}
+								<Arrow />
+							</Button>
+						</div>
+					{/if}
 				</Sheet.Header>
 			</Sheet.Content>
 		</Sheet.Root>
