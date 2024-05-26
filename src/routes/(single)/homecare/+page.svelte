@@ -1,7 +1,14 @@
 <script lang="ts">
-	import { updateCurrentTheme, Theme } from '@/utils/domainHelper';
+	import { Domain } from '@/types/types.js';
+	import { updateCurrentTheme } from '@/utils/domainHelper';
 
-	updateCurrentTheme(Theme.Homecare, 'from homecare');
+	// Props
+	export let data;
+
+	// Page Data
+	let pageData = data.data;
+
+	updateCurrentTheme(Domain.Homecare, pageData.attributes.Title);
 </script>
 
 <h1>Home Care landing page</h1>

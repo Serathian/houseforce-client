@@ -6,13 +6,14 @@
 
 	// Props
 	export let data: {
-		pageData: APIResponse<'api::project.project'>;
-		collectionData: APIResponseCollection<'api::project-page.project-page'>;
+		pageData: APIResponse<'api::article.article'>;
+		collectionData: APIResponseCollection<'api::article-page.article-page'>;
 	};
 
 	// Data
 	let pageData = data.pageData.data;
 	let collection = data.collectionData.data;
+
 	let cardData = collection.map(
 		(x) =>
 			<CardData>{
@@ -25,8 +26,10 @@
 				id: x.id
 			}
 	);
-	updateCurrentTheme(Domain.Projects, pageData.attributes.Title);
+
+	updateCurrentTheme(Domain.Articles, pageData.attributes.Title);
 </script>
 
-<h1>Projects listed here</h1>
+<h1>Articles listed here</h1>
+
 <CardGrid collection={cardData} />

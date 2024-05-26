@@ -3,5 +3,5 @@ import { Domain } from '@/types/types';
 import { LoadCollectionType } from '@/api/collectionTypeApi';
 
 export const load: PageServerLoad = async () => {
-	return await LoadCollectionType(Domain.Projects);
+	return await LoadCollectionType(Domain.Articles);
 };

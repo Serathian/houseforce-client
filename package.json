@@ -16,12 +16,13 @@
 		"prettier": "npx prettier . --write"
 	},
 	"devDependencies": {
-		"@strapi/strapi": "4.24.0",
 		"@playwright/test": "^1.28.1",
+		"@strapi/strapi": "4.24.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/eslint": "^8.56.0",
+		"@types/qs": "^6.9.15",
 		"@typescript-eslint/eslint-plugin": "^7.0.0",
 		"@typescript-eslint/parser": "^7.0.0",
 		"autoprefixer": "^10.4.16",
@@ -47,6 +48,7 @@
 		"bits-ui": "^0.21.7",
 		"clsx": "^2.1.1",
 		"lucide-svelte": "^0.378.0",
+		"qs": "^6.12.1",
 		"tailwind-merge": "^2.3.0",
 		"tailwind-variants": "^0.2.1",
 		"vaul-svelte": "^0.3.0"
